@@ -73,7 +73,7 @@ jobs:
           echo VERSION=$VERSION
 
           docker tag $IMAGE_NAME $IMAGE_ID:${{ github.sha }}
-          docker push $IMAGE_ID:$VERSION
+          docker push $IMAGE_ID:$VERSION:${{ github.sha }}
   check:
     needs: push
     runs-on: ubuntu-latest
